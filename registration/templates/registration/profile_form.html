@@ -1,0 +1,262 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Perfil{% endblock %}     
+<div class="wrapper">
+
+{% block content %}
+<main>
+    <div class="profile">
+        <div class="profile-header">
+            <div class="profile-cover" style="background-image:url('{% static 'core/assets/images/gallery/3.jpg' %}')"></div>
+            <div>
+                <div class="profile-menu">
+                    <ul>
+                        <li class="active"><a href="#">Activity</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Photos</a></li>
+                        <div class="profile-user-follow">
+                            <button class="btn btn-primary btn-md btn-round btn-shadow">Follow</button>
+                        </div>
+                    </ul>
+                </div>
+                <div class="profile-name">
+                    <span>{{user.name}}</span>
+                </div>
+                <div class="profile-avatar">
+                    {% if request.user.profile.avatar %}
+                    <a href="{% url 'profile' %}">
+                        <img src="{{request.user.profile.avatar.url}}" class="img-responsive" alt="...">
+                        
+                    </a>
+                        
+                    {% else %}
+                        <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-responsive">
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+        <div class="profile-content content">
+            <div class="document">
+                <div class="row">
+                    <!-- activity -->
+                    <div class="col-lg-8 col-md-12">
+                        <div class="profile-activity">
+                            <!-- card -->
+                            <div class="card">
+                                <div class="activity-item">
+                                    <div class="card-body">
+                                        <div class="flex j-c-between">
+                                            <h5 class="mb-30 text-uppercase fw-700">Work Experience</h5>
+                                            <span class="fs-12 text-light"><i class="far fa-clock mr-5"></i> 7 h</span>
+                                       </div>
+                                        <div class="flex">
+                                            <div class="flex a-i-center j-c-center bg-gray-200 w-80 h-80 mr-30">
+                                                <i class="fas fa-briefcase fs-24"></i>
+                                            </div>
+                                            <div>
+                                                <span class="d-block fw-500">UI / UX Designer</span>
+                                                <span class="d-block fs-12 text-light">FreeGrap Digital Agency INC.</span>
+                                                <span class="d-block fs-12 text-light">2017 - Present</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer fs-12">
+                                        <a href="page-profile.html" class="text-primary mr-30"><i class="fas fa-heart mr-5"></i> Like</a>
+                                        <a href="page-profile.html" class="text-light mr-30"><i class="fas fa-comment mr-5"></i> Comments</a>
+                                        <a href="page-profile.html" class="text-light"><i class="fas fa-share mr-5"></i> Share</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="activity-item">
+                                    <div class="card-body">
+                                        <div class="flex j-c-between">
+                                            <h5 class="mb-30 text-uppercase fw-700">Education</h5>
+                                            <span class="fs-12 text-light"><i class="far fa-clock mr-5"></i> 7 h</span>
+                                       </div>
+                                        <div class="flex">
+                                            <div class="flex a-i-center j-c-center bg-gray-200 w-80 h-80 mr-30">
+                                                <i class="fas fa-school fs-24"></i>
+                                            </div>
+                                            <div>
+                                                <span class="d-block fw-500">Computer Science Department</span>
+                                                <span class="d-block fs-12 text-light">University of Oxford</span>
+                                                <span class="d-block fs-12 text-light">2016 - 2020</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer fs-12">
+                                        <a href="page-profile.html" class="text-light mr-30"><i class="far fa-heart mr-5"></i> Like</a>
+                                        <a href="page-profile.html" class="text-light mr-30"><i class="fas fa-comment mr-5"></i> Comments</a>
+                                        <a href="page-profile.html" class="text-light"><i class="fas fa-share mr-5"></i> Share</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="activity-item">
+                                    <div class="card-body">
+                                        <div class="flex j-c-between">
+                                            <h5 class="mb-30 text-uppercase fw-700">Article</h5>
+                                            <span class="fs-12 text-light"><i class="far fa-clock mr-5"></i> 7 h</span>
+                                       </div>
+                                       <p>
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste qui quos assumenda deserunt, eveniet odio maxime veniam atque iure incidunt enim, tempora repellat odit itaque, exercitationem ab adipisci. Consectetur, ducimus!</span> <br><br><span>Explicabo dicta, dolore illum voluptates maiores atque, id ipsam quis, quia nisi unde incidunt error laboriosam placeat. Inventore laborum aspernatur amet cupiditate, illo sapiente, perferendis itaque, optio ipsam, sunt rem!</span>
+                                       </p>
+                                    </div>
+                                    <div class="card-footer fs-12">
+                                        <a href="page-profile.html" class="text-primary mr-30"><i class="fas fa-heart mr-5"></i> Like</a>
+                                        <a href="page-profile.html" class="text-light mr-30"><i class="fas fa-comment mr-5"></i> Comments</a>
+                                        <a href="page-profile.html" class="text-light"><i class="fas fa-share mr-5"></i> Share</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="activity-item">
+                                    <div class="card-body">
+                                        <div class="flex j-c-between">
+                                            <h5 class="mb-30 text-uppercase fw-700">Article</h5>
+                                            <span class="fs-12 text-light"><i class="far fa-clock mr-5"></i> 7 h</span>
+                                       </div>
+                                       <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolores voluptatum maiores, eos iste illo amet, id ut veniam, perferendis hic sint reiciendis eveniet molestiae architecto vitae odio pariatur voluptates!
+                                       </p>
+                                       <div class="w-70p">
+                                            <img src="assets/images/gallery/2.jpg" alt="..." class="img-responsive">
+                                       </div>
+                                    </div>
+                                    <div class="card-footer fs-12">
+                                        <a href="page-profile.html" class="text-primary mr-30"><i class="fas fa-heart mr-5"></i> Like</a>
+                                        <a href="page-profile.html" class="text-light mr-30"><i class="fas fa-comment mr-5"></i> Comments</a>
+                                        <a href="page-profile.html" class="text-light"><i class="fas fa-share mr-5"></i> Share</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- right side -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card">
+                           <div class="card-title">
+                               <h4>FOLLOWING</h4>
+                           </div>
+
+                            <div class="card-body py-0">
+                                <div class="card-row">
+                                   <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md  mr-20">
+                                           <img src="assets/images/user-1.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Daniel Furth</span>
+                                           <a href="page-profile.html" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md mr-20">
+                                           <img src="assets/images/user-2.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Bella Artson</span>
+                                           <a href="page-profile.html" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-warning mr-20">
+                                           <img src="assets/images/user-3.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Jim Can</span>
+                                           <a href="page-profile.html" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-info mr-20">
+                                           <img src="assets/images/user-4.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Bred Tykson</span>
+                                           <a href="page-profile.html" class="btn btn-primary btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md  mr-20">
+                                           <img src="assets/images/user-1.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Daniel Furth</span>
+                                           <a href="page-profile.html" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md mr-20">
+                                           <img src="assets/images/user-2.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Bella Artson</span>
+                                           <a href="page-profile.html" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-warning mr-20">
+                                           <img src="assets/images/user-3.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Jim Can</span>
+                                           <a href="page-profile.html" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-info mr-20">
+                                           <img src="assets/images/user-4.png" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Bred Tykson</span>
+                                           <a href="page-profile.html" class="btn btn-primary btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                               </div>  
+                            </div>
+                       </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</main>
+
+{% endblock %}
+
+    
+</div>
+
+    {% block script %}
+    <!-- =========================================================-->
+    <!-- All Scripts -->
+    <!-- ========================================================= -->
+    <!-- jquery -->
+    <script src="{% static 'core/assets/vendor/jquery/js/jquery-3.2.1.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'core/assets/vendor/popper/js/popper.min.js' %}"></script>
+    <script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- simplebar scroll -->
+    <script src="{% static 'core/assets/vendor/simplebar/js/simplebar.min.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'core/assets/js/main.js' %}"></script>  
+    {% endblock %}  

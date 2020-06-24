@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <!-- favicons -->
+    <link rel="icon" type="image/png" href="{% static 'core/assets/images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'core/assets/images/apple-touch-icon.png' %}">
+
+    <!-- =========================================================-->
+    <!-- All Styles -->
+    <!-- ========================================================= -->
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'core/assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="{% static 'core/assets/vendor/font-awesome/css/font-awesome.min.css' %}">
+    <!-- simplebar scroll -->
+    <link rel="stylesheet" href="{% static 'core/assets/vendor/simplebar/css/simplebar.min.css' %}">
+    <!-- =========================================================-->
+    <!-- This Page Styles -->
+    <!-- ========================================================= -->
+    <!-- morris chart -->
+    <link rel="stylesheet" href="{% static 'core/assets/vendor/morris/css/morris.min.css' %}">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="{% static 'core/assets/css/main.css@v=1.0.css' %}">
+</head>
+<body>
+
+    <div class="wrapper">
+        {% block menu %}
+        <!-- aside nav -->
+        <aside class="main-navigation">
+            <nav data-simplebar>
+                <div class="header">
+                    <div class="logo">
+                       <div class="logo-type">
+                            <a href="{% url 'home' %}"><span>c<span>o</span>dash</span></a>
+                       </div>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li class="menu-category">MAIN</li>
+                    <li class="nav-sub active">
+                        <a href="{% url 'home' %}"><i class="fas fa-desktop nav-icon"></i>Dashboard</a>
+                        <ul class="sub-menu">
+                            <li class="active"><a href="{% url 'home' %}">Dashboard 1</a></li>
+                            <li><a href="dashboard-crypto.html">Crypto Currency</a></li>
+                            <li><a href="dashboard-support.html">Support Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fas fa-align-left nav-icon"></i>Menu Styles</a>
+                        <ul class="sub-menu">
+                            <li><a href="side-menu-light.html">Side Menu Light</a></li>
+                            <li><a href="side-menu-transparent.html">Side Menu Transparent</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">UI</li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fab fa-uikit nav-icon"></i>UI Elements</a>
+                        <ul class="sub-menu">
+                            <li><a href="ui-buttons.html">Buttons</a></li>
+                            <li><a href="ui-typography.html">Typography</a></li>
+                            <li><a href="ui-alert.html">Notifications</a></li>
+                            <li><a href="ui-modal.html">Modals</a></li>
+                            <li><a href="ui-progress.html">Progress Bar</a></li>
+                            <li><a href="ui-tabs.html">Tabs &amp; Accordions</a></li>
+                            <li><a href="ui-navbars.html">Navbars</a></li>
+                            <li><a href="ui-breadcrumbs.html">Breadcrumbs</a></li>
+                            <li><a href="ui-blockquote.html">Blockquotes</a></li>
+                            <li><a href="ui-pagination.html">Pagination</a></li>
+                            <li><a href="ui-badges-labels.html">Badges &amp; Labels</a></li>
+                            <li><a href="ui-timeline.html">Timeline</a></li>
+                            <li><a href="ui-preloaders.html">Preloaders</a></li>
+                            <li><a href="ui-carousel.html">Carousel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fa fa-check-circle nav-icon"></i>Forms</a>
+                        <ul class="sub-menu">
+                            <li><a href="form-input.html">Inputs</a></li>
+                            <li><a href="form-controls.html">Controls</a></li>
+                            <li><a href="form-upload.html">Upload</a></li>
+                            <li><a href="form-range-slider.html">Range Slider</a></li>
+                            <li><a href="form-editor.html">Editor</a></li>
+                            <li><a href="form-mask.html">Mask</a></li>
+                            <li><a href="form-validation.html">Validation</a></li>
+                            <li><a href="form-wizard.html">Wizard</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="table-basic.html"><i class="fa fa-table nav-icon"></i>Tables</a></li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fa fa-chart-pie nav-icon"></i>Charts</a>
+                        <ul class="sub-menu">
+                            <li><a href="chart-chartjs.html">ChartsJs</a></li>
+                            <li><a href="chart-chartist.html">Chartist</a></li>
+                            <li><a href="chart-morris.html">Morris Chart</a></li>
+                            <li><a href="chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="chart-peity.html">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fa fa-globe nav-icon"></i>Utilities</a>
+                        <ul class="sub-menu">
+                            <li><a href="util-colors.html">Colors</a></li>
+                            <li><a href="util-sizing.html">Sizing</a></li>
+                            <li><a href="util-spacing.html">Spacing</a></li>
+                            <li><a href="util-position.html">Position</a></li>
+                            <li><a href="util-typography.html">Typography</a></li>
+                            <li><a href="util-nomaker.html">No Maker</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">PAGES</li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fa fa-layer-group nav-icon"></i>Widgets</a>
+                        <ul class="sub-menu">
+                            <li><a href="widget-statistic.html">Statistic</a></li>
+                            <li><a href="widget-chart.html">Charts</a></li>
+                            <li><a href="widget-list.html">List</a></li>
+                            <li><a href="widget-form.html">Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fa fa-book-open nav-icon"></i>Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="page-login.html">Login</a></li>
+                            <li><a href="page-register.html">Register</a></li>
+                            <li><a href="page-gallery.html">Gallery</a></li>
+                            <li><a href="page-profile.html">Profile</a></li>
+                            <li><a href="page-pricing.html">Pricing</a></li>
+                            <li><a href="page-error-404.html">Error 404</a></li>
+                            <li><a href="page-error-500.html">Error 500</a></li>
+                            <li><a href="page-blank.html">Simple Blank</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-sub">
+                        <a href="{% url 'home' %}"><i class="fa fa-rocket nav-icon"></i>Apps</a>
+                        <ul class="sub-menu">
+                            <li><a href="app-inbox.html">Inbox</a></li>
+                            <li><a href="app-todo.html">To-Do</a></li>
+                            <li><a href="app-calendar.html">Calendar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside><!-- aside nav //. -->
+        {% endblock %}
+        {% block header %}
+        <!-- header -->
+        <header>
+            <div class="header-left">
+                <!-- navigation-toggle  -->
+                <a href="{% url 'home' %}" class="header-btn side-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a> 
+
+                <!-- window full screen --> 
+                <a href="{% url 'home' %}" id="fullScreen" class="header-btn hide-md"><i class="fa fa-expand"></i></a>
+
+                <!-- search -->
+                <div class="form-group search-field flex a-i-center hide-xs">
+                    <div class="header-divider"></div>
+                    <label for="header-search"><i class="fa fa-search"></i></label>
+                    <input type="text" class="form-control" id="header-search" placeholder="Search here..." >
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- dropdown language -->
+                <div class="dropdown hide-md dropdown-xs">
+                    <a href="{% url 'home' %}" class="header-btn alert-active" data-toggle="dropdown">
+                        <i class="far fa-flag"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right text-center">
+                        <a href="{% url 'home' %}" class="dropdown-item">TR</a>
+                        <a href="{% url 'home' %}" class="dropdown-item active">EN</a>
+                        <a href="{% url 'home' %}" class="dropdown-item">RU</a>
+                    </div>
+                </div><!-- dropdown language //. -->
+
+                <!-- dropdown notification -->
+                <div class="dropdown media-dropdown">
+                    <a href="{% url 'home' %}" class="header-btn alert-active" data-toggle="dropdown">
+                        <i class="far fa-bell">
+                            <span class="alert-dot">
+                                <span class="badge badge-dot badge-sm badge-primary"></span>
+                            </span>
+                        </i>
+                    </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <div class="media-wrapper">
+                        <div class="media-item">
+                            <div class="item-thumbnail  bg-success">
+                                <i class="far fa-user"></i>
+                            </div>
+                            <div class="item-content">
+                                <p>
+                                    <strong>New user registration</strong>
+                                    <small class="float-right">5 hours ago</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media-item">
+                            <div class="item-thumbnail bg-danger">
+                                <i class="fa fa-dollar-sign"></i>
+                            </div>
+                            <div class="item-content">
+                                <p>
+                                    <strong>$392 today sales earning.</strong>
+                                    <small class="float-right">1 day ago</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media-item">
+                            <div class="item-thumbnail bg-warning">
+                                <i class="fa fa-dollar-sign"></i>
+                            </div>
+                            <div class="item-content">
+                                <p>
+                                    <strong>Last Site Update</strong>
+                                    <small class="float-right">2 day ago</small>
+                                </p>
+                            </div>
+                        </div>
+                        <a href="{% url 'home' %}" class="media-all-view">All View</a>
+                    </div>
+                  </div>
+                </div><!-- dropdown notification //. -->
+
+                <!-- dropdown message -->
+                <div class="dropdown media-dropdown hide-md">
+                    <a href="{% url 'home' %}" class="header-btn" data-toggle="dropdown">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <div class="media-wrapper">
+                        <div class="media-item">
+                            <div class="item-thumbnail media-avatar-status">
+                                <span class="badge badge-dot badge-success"></span>
+                                <img src="{% static 'core/assets/images/user-1.png' %}" class="img-responsive" alt="...">
+                            </div>
+                            <div class="item-content">
+                                <p>
+                                    <a href="app-inbox.html"><strong>Application Error</strong></a>
+                                    <small class="float-right">12 hours ago</small>
+                                </p>
+                                <p class="small">There is an error in the sales application...</p>
+                            </div>
+                        </div>
+                        <div class="media-item">
+                            <div class="item-thumbnail media-avatar-status">
+                                <span class="badge badge-dot badge-danger"></span>
+                                <img src="{% static 'core/assets/images/user-2.png' %}" class="img-responsive" alt="...">
+                            </div>
+                            <div class="item-content">
+                                <p>
+                                    <a href="app-inbox.html"><strong>New Product</strong></a>
+                                    <small class="float-right">12 hours ago</small>
+                                </p>
+                                <p class="small">New product detail and pictures</p>
+                            </div>
+                        </div>
+                        <div class="media-item">
+                            <div class="item-thumbnail media-avatar-status">
+                                <span class="badge badge-dot badge-danger"></span>
+                                <img src="{% static 'core/assets/images/user-3.png' %}" class="img-responsive" alt="...">
+                            </div>
+                            <div class="item-content">
+                                <p>
+                                    <a href="app-inbox.html"><strong>Weekly Sales Report</strong></a>
+                                    <small class="float-right">1 day ago</small>
+                                </p>
+                                <p class="small">The weekly report can be found in the...</p>
+                            </div>
+                        </div>
+                        <a href="app-inbox.html" class="media-all-view">All View</a>
+                    </div>
+                  </div>
+                </div><!-- dropdown message //. -->
+
+                <!-- dropdown user-->
+                <div class="dropdown logged-user">
+                  <a href="{% url 'home' %}#" class="header-btn" data-toggle="dropdown">
+                    {% if request.user.profile.avatar %}
+                    <img src="{{request.user.profile.avatar.url}}" alt="...">
+                    {% else %}
+                        <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-responsive">
+                    {% endif %}
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a href="{% url 'profile' %}" class="dropdown-item"><i class="fa fa-user mr-10"></i> Profile</a>
+                    <a href="app-inbox.html" class="dropdown-item"><i class="far fa-envelope mr-10"></i> Inbox</a>
+                    <a href="#" class="dropdown-item"><i class="fa fa-cog mr-10"></i> Settings</a>
+                    {% if not request.user.is_authenticated %}
+                        <a href="{% url 'login' %}" class="dropdown-item"><i class="fas fa-sign-in-alt mr-10"></i> Acceder</a>
+                        <a href="{% url 'signup' %}" class="dropdown-item"><i class="fas fa-sign-in-alt mr-10"></i> Registro</a>
+                    {% else %}
+                        <a href="{% url 'logout' %}" class="dropdown-item"><i class="fas fa-sign-out-alt mr-10"></i> Log Out</a>
+                    {% endif %}
+                  </div>
+                </div><!-- dropdown user //. -->
+            </div>
+        </header><!-- header //. -->
+        {% endblock %}
+        {% block content %}
+        <main>
+            <div class="content">
+                <div class="row">
+                    <!-- card -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-hover">
+                            <div class="card-body text-whs-nowrap">
+                               <div class="flex a-i-center j-c-between">
+                                    <div class="">
+                                        <span class="d-block fs-22 fw-600 mt-5">120</span>
+                                        <small class="fs-12 text-light">Product Sold </small>
+                                    </div>
+                                    <span id="sparkline2">1,3,3,6,5,9,12,1,4,4,7</span>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-hover">
+                            <div class="card-body flex j-c-between a-i-center text-whs-nowrap">
+                                <div>
+                                    <span class="d-block fs-22 fw-600 mt-5">$3,250</span>
+                                    <small class="fs-12 text-light mr-10">Sales </small>
+                                    <span class="fs-10 text-danger fw-400 mt-5">% 5.18 <i class="fa fa-angle-down ml-5"></i></span>
+                                </div>
+                                <div class="card-icon w-50 h-50 flex-sh-0">
+                                    <i class="fas fa-shopping-basket"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-hover">
+                            <div class="card-body flex j-c-between a-i-center text-whs-nowrap">
+                                <div>
+                                    <span class="d-block fs-22 fw-600 mt-5">$17,250</span>
+                                    <small class="fs-12 text-light mr-10">Balance</small>
+                                    <span class="fs-10 text-success fw-400 mt-5">% 14.15 <i class="fa fa-angle-up ml-5"></i></span>
+                                </div>
+                                <div class="card-icon w-50 h-50 flex-sh-0">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-hover card-gradient">
+                            <div class="card-body flex j-c-between a-i-center text-whs-nowrap">
+                                <div>
+                                    <span class="d-block fs-22 fw-600 mt-5">1275</span>
+                                    <small class="fs-12 text-white">New User</small>
+                                </div>
+                                <div class="card-icon w-50 h-50 flex-sh-0 text-white">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- boxed statics //.  -->
+
+                <div class="row">
+                    <!-- card -->
+                    <div class="col-xl-9 col-12">
+                        <div class="card no-overflow">
+                            <div class="card-body text-light  no-padding-bottom">
+                               <div class="flex j-c-between ln-16">
+                                    <h4>Analysis</h4>
+                                    <div class="dropdown">
+                                        <a href="{% url 'home' %}" class=" btn-dot-link" data-toggle="dropdown">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right fs-12 ">
+                                            <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fa fa-plus w-20"></i> Add New</a>
+                                            <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fas fa-redo-alt w-20"></i> Refresh</a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="card-row">
+                                   <div class="pt-50">
+                                        <div id="morris-area2" class="h-250"></div>      
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-xl-3 col-12">
+                        <div class="widget-task">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>TASK</h4>
+                                </div>
+                                <div class="card-body pb-0 pt-0">
+                                    <div class="card-row">
+                                        <div class="item">
+                                            <div class="change"></div>
+                                            <div>
+                                                <a href="{% url 'home' %}">Monthly report, Apr</a>
+                                                <span>Created to <strong>Carl Bilind</strong></span>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="change active"></div>
+                                            <div>
+                                                <a href="{% url 'home' %}">New Design Example</a>
+                                                <span>Created to <strong>Mary Joe</strong></span>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="change"></div>
+                                            <div>
+                                                <a href="{% url 'home' %}">Make a presentation</a>
+                                                <span>Created to <strong>Becca Ferg</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- table -->
+                    <div class="col-xl-9 col-12">
+                        <div class="card pb-0">
+                            <div class="card-title">
+                                <h4>ORDER LIST</h4>
+                            </div>
+                            <div class="card-body pt-0 pb-0">
+                                <div class="card-row">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th class="w-10p">#</th>
+                                                    <th>Customer</th>
+                                                    <th>Price</th>
+                                                    <th>Date</th>
+                                                    <th class="w-10p">Status</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>0125</td>
+                                                    <td>Fedissa Buskov</td>
+                                                    <td>$152</td>
+                                                    <td>24/08/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg badge-success"></span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <a href="{% url 'home' %}" class=" btn-dot-link" data-toggle="dropdown">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right fs-12 ">
+                                                                <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fa fa-plus w-20"></i> Add New</a>
+                                                                <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fas fa-redo-alt w-20"></i> Refresh</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0125</td>
+                                                    <td>Amir Kan</td>
+                                                    <td>$241</td>
+                                                    <td>22/08/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg badge-warning"></span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <a href="{% url 'home' %}" class=" btn-dot-link" data-toggle="dropdown">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right fs-12 ">
+                                                                <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fa fa-plus w-20"></i> Add New</a>
+                                                                <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fas fa-redo-alt w-20"></i> Refresh</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0125</td>
+                                                    <td>Nuhad Sed</td>
+                                                    <td>$110</td>
+                                                    <td>20/08/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg  badge-danger"></span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <a href="{% url 'home' %}" class=" btn-dot-link" data-toggle="dropdown">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right fs-12 ">
+                                                                <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fa fa-plus w-20"></i> Add New</a>
+                                                                <a href="{% url 'home' %}" class="dropdown-item fs-12"><i class="fas fa-redo-alt w-20"></i> Refresh</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0125</td>
+                                                    <td>Wisteria Eagle</td>
+                                                    <td>$325</td>
+                                                    <td>30/08/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg badge-success"></span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'home' %}" class="btn-dot-link">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3214</td>
+                                                    <td>Tyson Bad</td>
+                                                    <td>$114</td>
+                                                    <td>13/08/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg badge-warning"></span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'home' %}" class="btn-dot-link">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0125</td>
+                                                    <td>Jessie Talent</td>
+                                                    <td>$241</td>
+                                                    <td>10/08/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg badge-success"></span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'home' %}" class="btn-dot-link">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3917</td>
+                                                    <td>Micheal Durost</td>
+                                                    <td>$127</td>
+                                                    <td>11/07/2018</td>
+                                                    <td class="text-center">
+                                                        <span class="badge badge-dot bodge-lg badge-success"></span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'home' %}" class="btn-dot-link">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- table //. -->
+
+                    <div class="col-xl-3 col-12">
+                        <div class="card">
+                            <div class="card-title mb-30">
+                                <h4>STATICS</h4>
+                            </div>
+                                <div class="chart-wrapper h-200">
+                                    <canvas id="chart-donut"></canvas>
+                                </div>
+                                <hr>
+                                <div class="flex j-c-between px-30 pb-30">
+                                    
+                                    <div>
+                                        <div>
+                                           <span class="badge badge-primary badge-dot badge-lg"></span>
+                                           <span class="fs-12 ml-5 text-light">Chrome</span>
+                                       </div>
+                                        <div>
+                                           <span class="badge badge-warning badge-dot badge-lg"></span> 
+                                           <span class="fs-12 ml-5 text-light">Firefox</span>
+                                       </div>
+                                    </div>
+
+                                    <div>
+                                        <div>
+                                           <span class="badge badge-purple badge-dot badge-lg"></span> 
+                                           <span class="fs-12 ml-5 text-light">Safari</span>
+                                       </div>
+                                        <div>
+                                           <span class="badge badge-cyan badge-dot badge-lg"></span> 
+                                           <span class="fs-12 ml-5 text-light">Explorer</span>
+                                       </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <!-- card -->
+                    <div class="col-xl-4 col-12">
+                        <div class="card widget-profile">
+                            <div class="card-body py-0">
+                                <div class="card-row">
+                                    <div class="widget-profile-cover">
+                                        <div class="h-150 no-overflow">
+                                            <img src="{% static 'core/assets/images/gallery/1.jpg' %}" class="img-responsive" alt="...">
+                                        </div>
+                                        <div class="widget-profile-avatar">
+                                            <img src="{% static 'core/assets/images/user-1.png' %}" class="img-responsive" alt="...">
+                                        </div>
+                                    </div>
+                                    <div class="widget-profile-content">
+                                        <span class="title">Daniel Furth</span>
+                                        <span class="fs-12 text-light">UX Engineer</span>
+                                        <div class="statistic">
+                                            <div>
+                                                <span class="fs-16 d-block fw-600">2.5K</span>
+                                                <small class="fs-12">Likes</small>
+                                            </div>
+                                            <div>
+                                                <span class="fs-16 d-block fw-600">2.775</span>
+                                                <small class="fs-12">Followers</small>
+                                            </div>
+                                            <div>
+                                                <span class="fs-16 d-block fw-600">241</span>
+                                                <small class="fs-12">Following</small>
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'home' %}" class="btn btn-primary btn-shadow btn-round btn-sm">Follow</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-xl-4 col-12">
+                       <div class="card">
+                           <div class="card-title">
+                               <h4>FOLLOWING</h4>
+                           </div>
+
+                           <div class="card-body py-0">
+                               <div class="card-row">
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md  mr-20">
+                                           <img src="{% static 'core/assets/images/user-1.png' %}" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Daniel Furth</span>
+                                           <a href="{% url 'home' %}" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md mr-20">
+                                           <img src="{% static 'core/assets/images/user-2.png' %}" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Bella Artson</span>
+                                           <a href="{% url 'home' %}" class="btn btn-primary btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-warning mr-20">
+                                           <img src="{% static 'core/assets/images/user-3.png' %}" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Jim Can</span>
+                                           <a href="{% url 'home' %}" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-info mr-20">
+                                           <img src="{% static 'core/assets/images/user-4.png' %}" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Bred Tykson</span>
+                                           <a href="{% url 'home' %}" class="btn btn-primary btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                                   <!-- widget item -->
+                                   <div class="widget-item">
+                                       <div class="thumbnail-md bg-warning mr-20">
+                                           <img src="{% static 'core/assets/images/user-3.png' %}" alt="..." class="img-responsive">
+                                       </div>
+                                       <div class="flex j-c-between w-100p">
+                                           <span class="flex-sh-0 fs-14 fw-500">Jim Can</span>
+                                           <a href="{% url 'home' %}" class="btn btn-secondary btn-outline btn-xs btn-round">Follow</a>
+                                       </div>
+                                   </div><!-- widget item //. -->
+                               </div>  
+                           </div>
+                       </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-xl-4 col-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>NOTIFICATIONS</h4>
+                            </div>
+                            <div class="card-body py-0">
+                                <div class="card-row">
+                                    <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md bg-primary mr-20">
+                                            <i class="far fa-user"></i>
+                                        </div>
+                                        <div class="flex j-c-between w-100p">
+                                            <span class="widget-title">5 new users registering.</span>
+                                            <span class="widget-text-small">12 hours ago</span>
+                                        </div>
+                                    </div><!-- widget item //. -->
+                                    <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md bg-success mr-20">
+                                            <i class="fas fa-money-bill"></i>
+                                        </div>
+                                        <div class="flex j-c-between w-100p">
+                                            <span class="widget-title">$ 4218 new total balance</span>
+                                            <span class="widget-text-small">1 day ago</span>
+                                        </div>
+                                    </div><!-- widget item //. -->
+                                    <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md bg-warning mr-20">
+                                            <i class="fas fa-exclamation"></i>
+                                        </div>
+                                        <div class="flex j-c-between w-100p">
+                                            <span class="widget-title">Site Auth Problem</span>
+                                            <span class="widget-text-small">2 day ago</span>
+                                        </div>
+                                    </div><!-- widget item //. -->
+                                    <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md bg-info mr-20">
+                                            <i class="fas fa-info"></i>
+                                        </div>
+                                        <div class="flex j-c-between w-100p">
+                                            <span class="widget-title">CPU usage went above %20</span>
+                                            <span class="widget-text-small">12 hours ago</span>
+                                        </div>
+                                    </div><!-- widget item //. -->
+                                    <!-- widget item -->
+                                    <div class="widget-item">
+                                        <div class="thumbnail-md bg-info mr-20">
+                                            <i class="fas fa-info"></i>
+                                        </div>
+                                        <div class="flex j-c-between w-100p">
+                                            <span class="widget-title">Monthly traffic: 275K+</span>
+                                            <span class="widget-text-small">14 hours ago</span>
+                                        </div>
+                                    </div><!-- widget item //. -->
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card -->
+                    <div class="col-xl-6 col-12">
+                        <div class="card">
+                            <div class="card-body pb-0">
+                                <div class="flex j-c-between mb-35">
+                                    <h4>6 Avg.</h4>
+                                    <span class="fs-14 text-light">Mail Feedbacks </span>
+                                </div>
+                                <div class="h-70 text-center">
+                                    <span id="sparkline4">2,3,7,3,5,9,12,1,4,2,7,5,5,8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="card">
+                            <div class="card-body pb-0">
+                                <div class="flex j-c-between mb-35">
+                                    <h4>6 Avg.</h4>
+                                    <span class="fs-14 text-light">Mail Feedbacks </span>
+                                </div>
+                                <div class="h-70 text-center">
+                                    <span id="sparkline5">2,3,7,3,5,9,12,1,4,2,7,5,5,8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <!-- card -->
+                    <div class="col-xl-6 col-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="pt-30">
+                                    <h4 class="pl-30 mb-20">Session Time</h4>
+                                    <div id="morris-line" class="h-150"></div>  
+                                </div>
+                               <div class="flex j-c-between px-30 py-45">
+                                   <div>
+                                       <span class="fs-16 fw-600 d-block">175</span>
+                                       <small class="fs-14 text-light">Visitors</small>
+                                   </div>
+                                   <div>
+                                       <span class="fs-16 fw-600 d-block">12K</span>
+                                       <small class="fs-14 text-light">Views</small>
+                                   </div>
+                                   <div>
+                                       <span class="fs-16 fw-600 d-block">1m 25sec</span>
+                                       <small class="fs-14 text-light">Time</small>
+                                   </div>
+                               </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}
+    </div>
+    {% block script %}
+    <!-- =========================================================-->
+    <!-- All Scripts -->
+    <!-- ========================================================= -->
+    <!-- jquery -->
+    <script src="{% static 'core/assets/vendor/jquery/js/jquery-3.2.1.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'core/assets/vendor/popper/js/popper.min.js' %}"></script>
+    <script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- simplebar scroll -->
+    <script src="{% static 'core/assets/vendor/simplebar/js/simplebar.min.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'core/assets/js/main.js' %}"></script>
+    <!-- =========================================================-->
+    <!-- Required for this page scripts -->
+    <!-- ========================================================= -->
+    <!-- chartjs -->
+    <script src="{% static 'core/assets/vendor/chartjs/js/chartjs.min.js' %}"></script>
+    <!-- morris chart -->
+    <script src="{% static 'core/assets/vendor/raphael/js/raphael.min.js' %}"></script>    
+    <script src="{% static 'core/assets/vendor/morris/js/morris.min.js' %}"></script>     
+    <!-- sparkline chart -->
+    <script src="{% static 'core/assets/vendor/jquery.sparkline/js/jquery.sparkline.min.js' %}"></script>
+    <!-- peity chart -->
+    <script src="{% static 'core/assets/vendor/jquery.peity/js/jquery.peity.min.js' %}"></script>  
+
+    <!--  begin js -->
+    <script src="{% static 'core/assets/js/index.js' %}"></script>
+    {% endblock %}
+</body>
+</html>

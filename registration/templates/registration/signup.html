@@ -1,0 +1,96 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Registrarse{% endblock %}     
+<div class="wrapper">
+{% block menu %}
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block content %}
+<style>.errorlist{color:red;}</style>
+<div class="wrapper">
+    <div class="auth-split">
+        <div class="auth-left">
+            <div class="auth-box-wrapper">
+                <div class="auth-logo">
+                    <div class="logo">
+                       <div class="logo-type logo-type-colored">
+                            <a href="{% url 'home' %}"><span>D<span>ei</span>son</span></a>
+                       </div>
+                    </div>
+                </div>
+                <div class="fs-18 fw-600 text-center mb-30 text-title">Resgistro</div>
+                <small class="text-danger">
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% if field.errors %}
+                                {% for error in field.errors %}
+                                    {{ error|escape }}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    
+                        {% if form.non_field_errors%}
+                            {% for error in form.non_field_errors %}
+                                {{ error|escape }}
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                </small>
+                <form action="" method="post">{% csrf_token %}
+                   <div class="form-group mb-20">
+                        <label for="form-username"><strong>Nombre de usuario</strong></label>
+                        <input type="text" name="username" class="form-control form-control-pill" id="id_username">
+                        </div>
+                        <div class="form-group mb-20">
+                            <label for="form-mail"><strong>E-Mail</strong></label>
+                            <input type="text" name="email" class="form-control form-control-pill" id="id_email">
+                        </div>
+                        <div class="form-group mb-20">
+                            <label for="form-pass"><strong>Contraseña</strong></label>
+                            <input type="password" name="password1" class="form-control form-control-pill" id="id_password1">
+                        </div>
+                    <div class="form-group mb-20">
+                        <label for="form-pass2"><strong>Repetir la contraseña</strong></label>
+                        <input type="password" name="password2" class="form-control form-control-pill" id="id_password2">
+                    </div>
+                    <div class="form-group flex j-c-center mt-30">
+                        <p><input type="submit" class="btn btn-primary btn-shadow btn-round" value="Confirmar"></p>
+                        <!--<button type="submit" class="btn btn-primary btn-shadow btn-round">Register</button>-->
+                    </div>
+                    <div>
+                        <hr>
+                        <p class="fs-12 text-center text-light">
+                           Do have an account? <a href="{% url 'login' %}" class="text-primary">Log In</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="auth-right" style="background-image:url('{% static 'core/assets/images/auth-split.jpg' %}')">
+            <div class="auth-content">
+                <div>
+                    <h1>Join Us!</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nisi asperiores iste repudiandae, quisquam, atque minus minima mollitia impedit odio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<!-- =========================================================-->
+<!-- All Scripts -->
+<!-- ========================================================= -->
+<!-- jquery -->
+<script src="{% static 'core/assets/vendor/jquery/js/jquery-3.2.1.min.js' %}"></script>
+<!-- bootstrap -->
+<script src="{% static 'core/assets/vendor/popper/js/popper.min.js' %}"></script>
+<script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- simplebar scroll -->
+<script src="{% static 'core/assets/vendor/simplebar/js/simplebar.min.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'core/assets/js/main.js' %}"></script>  
+{% endblock %}  
