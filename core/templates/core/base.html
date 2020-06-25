@@ -9,7 +9,7 @@
     <!-- favicons -->
     <link rel="icon" type="image/png" href="{% static 'core/assets/images/favicon.png' %}">
     <link rel="apple-touch-icon" href="{% static 'core/assets/images/apple-touch-icon.png' %}">
-
+    {% block css %}
     <!-- =========================================================-->
     <!-- All Styles -->
     <!-- ========================================================= -->
@@ -27,6 +27,7 @@
 
     <!-- Main Styles -->
     <link rel="stylesheet" href="{% static 'core/assets/css/main.css@v=1.0.css' %}">
+    {% endblock %}
 </head>
 <body>
 
@@ -38,7 +39,7 @@
                 <div class="header">
                     <div class="logo">
                        <div class="logo-type">
-                            <a href="{% url 'home' %}"><span>c<span>o</span>dash</span></a>
+                            <a href="{% url 'home' %}"><span>D<span>ei</span>son</span></a>
                        </div>
                     </div>
                 </div>

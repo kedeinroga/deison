@@ -11,16 +11,16 @@
             <div>
                 <div class="profile-menu">
                     <ul>
-                        <li class="active"><a href="#">Activity</a></li>
+                        <li class="active"><a href="#activity">Activity</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Photos</a></li>
+                        <li><a href="#update">Actualizar perfil</a></li>
                         <div class="profile-user-follow">
                             <button class="btn btn-primary btn-md btn-round btn-shadow">Follow</button>
                         </div>
                     </ul>
                 </div>
                 <div class="profile-name">
-                    <span>{{user.name}}</span>
+                    <span>{{profile.user|truncatechars:"16"}}</span>
                 </div>
                 <div class="profile-avatar">
                     {% if request.user.profile.avatar %}
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="profile-content content">
+        <div class="profile-content content" id="activity">
             <div class="document">
                 <div class="row">
                     <!-- activity -->
@@ -236,6 +236,105 @@
 
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="profile-content content" id="update">
+            <div class="document">
+                <div class="row">
+                    
+                        
+
+                        <!-- card -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>PROFILE</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        <div class="flex">
+                                            <div class="thumbnail-xl mr-20">
+                                                {% if request.user.profile.avatar %}
+                                                    <img src="{{request.user.profile.avatar.url}}" class="img-responsive">
+                                                    <p class="mt-1">¿Borrar? <input type="checkbox" id="avatar-clear" name="avatar-clear" /></p>
+                                                {% else %}
+                                                    <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-responsive">
+                                                {% endif %}
+                                            </div>
+                                            <div>
+                                                <span class="fs-16 fw-600 d-block">{{profile.user|truncatechars:"16"}}</span>
+                                                <div class="form-group form-group-file">
+                                                    <div class="input-group">
+                                                        
+                                                        <input type="file" name="avatar" class="btn btn-secondary btn-xs btn-outline btn-round" id="id_avatar">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="id_username"><strong>Usuario</strong></label>
+                                                    <input type="text" name="username" class="form-control" value="{{profile.user|truncatechars:"16"}}" id="id_username" disabled>
+                                                </div>
+                                            </div>
+                                            <!--<div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="id_first_name"><strong>Nombre</strong></label>
+                                                    <input type="text" name="first_name" class="form-control" value="{{request.user.first_name}}" id="id_first_name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="id_last_name"><strong>Apellidos</strong></label>
+                                                    <input type="text" name="last_name" class="form-control" value="{{request.user.last_name}}" id="id_last_name">
+                                                </div>
+                                            </div>-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="id_email"><strong>E-mail</strong></label>
+                                                    <input type="email" name="email" value="{{request.user.email}}" class="form-control form-mask-4" id="id_email" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="id_link"><strong>Link</strong></label>
+                                                    {{ form.link }}
+                                                </div>
+                                            </div>
+                                            <!--<div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="form-profile-4"><strong>Celular</strong></label>
+                                                    <input type="text" class="form-control form-mask-5" id="form-profile-4">
+                                                </div>
+                                            </div>-->
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="id_bio"><strong>Descripción</strong></label>
+                                                    {{ form.bio }}
+                                                </div>
+                                            </div>
+                                            <p class="mt-3">
+                                                Si deseas editar tu email haz clic <a href="{% url 'profile_email' %}">aquí</a>.<br>
+                                                Y si quieres cambiar tu contraseña haz clic <a href="{% url 'password_change' %}">aquí</a>.
+                                              </p>
+                                            <div class="col-md-12">
+                                                <input type="submit" class="btn btn-primary btn-block mt-3" value="Actualizar">
+                                                
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    
+                
             </div>
         </div>
     </div> 
